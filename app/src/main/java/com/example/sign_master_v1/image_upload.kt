@@ -55,17 +55,14 @@ class image_upload : AppCompatActivity(),TextToSpeech.OnInitListener {
         if (status == TextToSpeech.SUCCESS) {
             // set US English as language for tts
             val result = tts!!.setLanguage(Locale.UK)
-
             if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
                 Log.e("TTS","The Language specified is not supported!")
             } else {
                 buttonSpeak!!.isEnabled = true
             }
-
         } else {
             Log.e("TTS", "Initilization Failed!")
         }
-
     }
 
     private fun speakOut() {
@@ -74,7 +71,6 @@ class image_upload : AppCompatActivity(),TextToSpeech.OnInitListener {
     }
 
     public override fun onDestroy() {
-        // Shutdown TTS
         if (tts != null) {
             tts!!.stop()
             tts!!.shutdown()
