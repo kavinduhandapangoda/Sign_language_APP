@@ -33,8 +33,6 @@ android {
         mlModelBinding true
         viewBinding = true
     }
-
-    aaptOptions { cruncherEnabled = false }
 }
 
 dependencies {
